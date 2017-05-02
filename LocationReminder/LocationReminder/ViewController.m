@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) MKPointAnnotation *point;
 
 @end
 
@@ -33,10 +34,11 @@
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake (47.6566674, -122);
     
         MKCoordinateRegion region         = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
-    
+        MKPointAnnotation *point          = [[MKPointAnnotation alloc] init];
+        point.coordinate                  = coordinate;
+        point.title                       = @"Cupertino";
+        [self.mapView addAnnotation:point];
         [self.mapView setRegion:region animated: YES];
-
-
 
 }
 
@@ -46,21 +48,26 @@
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake (47.0379, -122.9);
     
         MKCoordinateRegion region         = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
-    
+        MKPointAnnotation *point          = [[MKPointAnnotation alloc] init];
+        point.coordinate                  = coordinate;
+        point.title                       = @"Olympia";
+        [self.mapView addAnnotation:point];
         [self.mapView setRegion:region animated: YES];
     
 }
+
 - (IBAction)LocationLongTouchThree:(id)sender
 {
 
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake (40.7128, -74.00);
 
         MKCoordinateRegion region         = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
-
+        MKPointAnnotation *point          = [[MKPointAnnotation alloc] init];
+        point.coordinate                  = coordinate;
+        point.title                       = @"New York";
+        [self.mapView addAnnotation:point];
         [self.mapView setRegion:region animated: YES];
 
-
-    
 }
 
 @end
