@@ -22,29 +22,45 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
-    [self requestPermissions];
+    //[self requestPermissions];
     self.mapView.showsUserLocation    = YES;
+    [super viewDidLoad];
 }
 
 - (IBAction)LocationLongTouch:(id)sender
 {
 
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake (47.6566674, -122);
-        
+    
         MKCoordinateRegion region         = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
-        
+    
         [self.mapView setRegion:region animated: YES];
 
+
+
 }
-    -(void)requestPermissions
+
+- (IBAction)LocationLongTouchTwo:(id)sender
 {
-    self.locationManager              = [[CLLocationManager alloc] init];
-    [self.locationManager requestAlwaysAuthorization];
-
+    
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake (47.0379, -122.9);
+    
+        MKCoordinateRegion region         = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
+    
+        [self.mapView setRegion:region animated: YES];
+    
 }
+- (IBAction)LocationLongTouchThree:(id)sender
+{
+
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake (40.7128, -74.00);
+
+        MKCoordinateRegion region         = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
+
+        [self.mapView setRegion:region animated: YES];
 
 
+    
+}
 
 @end

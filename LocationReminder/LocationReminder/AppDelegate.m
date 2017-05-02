@@ -20,8 +20,11 @@
 {
 
     return YES;
+    
     ParseClientConfiguration *parseConfig = [ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration)
 {
+
+
 
     configuration.applicationId = @"awlsgjasrh";
     configuration.clientKey = @"repgojasoighjs";

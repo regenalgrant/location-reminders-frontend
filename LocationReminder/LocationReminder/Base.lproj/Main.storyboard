@@ -21,30 +21,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYc-qB-FE1">
-                                <rect key="frame" x="151" y="583" width="72" height="30"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bks-PV-6Wt">
+                                <rect key="frame" x="50" y="40" width="275" height="579"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="kie-O2-pAT"/>
+                                    <constraint firstAttribute="height" constant="579" id="6rr-RR-6J5"/>
                                 </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYc-qB-FE1">
+                                <rect key="frame" x="50" y="589" width="57" height="30"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button 1"/>
                                 <connections>
                                     <action selector="LocationLongTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z51-Wp-R3f"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bks-PV-6Wt">
-                                <rect key="frame" x="50" y="40" width="275" height="531"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw9-0a-aWO">
+                                <rect key="frame" x="261" y="589" width="64" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="531" id="6rr-RR-6J5"/>
+                                    <constraint firstAttribute="width" constant="64" id="CVJ-aC-WXE"/>
                                 </constraints>
-                            </mapView>
+                                <state key="normal" title="Button 3"/>
+                                <connections>
+                                    <action selector="LocationLongTouchThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydP-dv-oqs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTM-9H-LqI">
+                                <rect key="frame" x="156" y="589" width="63" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button 2"/>
+                                <connections>
+                                    <action selector="LocationLongTouchTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mBp-4p-gKg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LYc-qB-FE1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="151" id="4jt-du-HTC"/>
                             <constraint firstAttribute="trailing" secondItem="bks-PV-6Wt" secondAttribute="trailing" constant="50" id="5iR-a6-ndT"/>
+                            <constraint firstItem="Lw9-0a-aWO" firstAttribute="trailing" secondItem="bks-PV-6Wt" secondAttribute="trailing" id="JfK-uW-tn4"/>
                             <constraint firstItem="bks-PV-6Wt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="PCO-N5-hZ5"/>
                             <constraint firstItem="bks-PV-6Wt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="PyW-bm-sqS"/>
-                            <constraint firstItem="LYc-qB-FE1" firstAttribute="top" secondItem="bks-PV-6Wt" secondAttribute="bottom" constant="12" id="oY1-S5-K7I"/>
+                            <constraint firstItem="Lw9-0a-aWO" firstAttribute="leading" secondItem="hTM-9H-LqI" secondAttribute="trailing" constant="42" id="Vt7-Ew-dob"/>
+                            <constraint firstItem="LYc-qB-FE1" firstAttribute="baseline" secondItem="Lw9-0a-aWO" secondAttribute="baseline" id="bFO-9b-K4N"/>
+                            <constraint firstItem="LYc-qB-FE1" firstAttribute="baseline" secondItem="hTM-9H-LqI" secondAttribute="baseline" id="c5G-bU-xsm"/>
+                            <constraint firstItem="LYc-qB-FE1" firstAttribute="top" secondItem="bks-PV-6Wt" secondAttribute="bottom" constant="-30" id="oY1-S5-K7I"/>
+                            <constraint firstItem="hTM-9H-LqI" firstAttribute="leading" secondItem="LYc-qB-FE1" secondAttribute="trailing" constant="49" id="vZD-ax-jx2"/>
+                            <constraint firstItem="LYc-qB-FE1" firstAttribute="leading" secondItem="bks-PV-6Wt" secondAttribute="leading" id="wgH-db-z6E"/>
                         </constraints>
                     </view>
                     <connections>
@@ -53,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-164" y="109.29535232383809"/>
         </scene>
     </scenes>
 </document>
