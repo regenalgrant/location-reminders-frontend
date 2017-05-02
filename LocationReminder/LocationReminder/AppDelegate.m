@@ -19,9 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-    return YES;
-    
     ParseClientConfiguration *parseConfig = [ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration)
+    
 {
 
 
@@ -34,6 +33,7 @@
 
     [Parse initializeWithConfiguration:parseConfig];
 
+    return YES;
 
 }
 
