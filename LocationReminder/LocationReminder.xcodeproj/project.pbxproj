@@ -19,6 +19,9 @@
 		059C2A8C1EB7B3E700044683 /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059C2A881EB7B3D900044683 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		059C2A8E1EB7C0C200044683 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059C2A8D1EB7C0C200044683 /* MapKit.framework */; };
 		059C2A911EB8FF2000044683 /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 059C2A901EB8FF2000044683 /* AddReminderViewController.m */; };
+		059C2A941EBAE2D400044683 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 059C2A931EBAE2D400044683 /* LocationController.m */; };
+		059C2A971EBAE66200044683 /* LocationPresetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 059C2A961EBAE66200044683 /* LocationPresetsViewController.m */; };
+		059C2A9D1EBB7C6C00044683 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 059C2A9C1EBB7C6C00044683 /* Reminder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +55,12 @@
 		059C2A8D1EB7C0C200044683 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		059C2A8F1EB8FF2000044683 /* AddReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReminderViewController.h; sourceTree = "<group>"; };
 		059C2A901EB8FF2000044683 /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderViewController.m; sourceTree = "<group>"; };
+		059C2A921EBAE2D400044683 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
+		059C2A931EBAE2D400044683 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
+		059C2A951EBAE66200044683 /* LocationPresetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPresetsViewController.h; sourceTree = "<group>"; };
+		059C2A961EBAE66200044683 /* LocationPresetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPresetsViewController.m; sourceTree = "<group>"; };
+		059C2A9B1EBB7C6C00044683 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		059C2A9C1EBB7C6C00044683 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +101,15 @@
 				059C2A701EB7B26F00044683 /* AppDelegate.m */,
 				059C2A721EB7B26F00044683 /* ViewController.h */,
 				059C2A731EB7B26F00044683 /* ViewController.m */,
+				059C2A921EBAE2D400044683 /* LocationController.h */,
+				059C2A931EBAE2D400044683 /* LocationController.m */,
+				059C2A951EBAE66200044683 /* LocationPresetsViewController.h */,
+				059C2A961EBAE66200044683 /* LocationPresetsViewController.m */,
 				059C2A751EB7B26F00044683 /* Main.storyboard */,
 				059C2A8F1EB8FF2000044683 /* AddReminderViewController.h */,
 				059C2A901EB8FF2000044683 /* AddReminderViewController.m */,
+				059C2A9B1EBB7C6C00044683 /* Reminder.h */,
+				059C2A9C1EBB7C6C00044683 /* Reminder.m */,
 				059C2A781EB7B26F00044683 /* Assets.xcassets */,
 				059C2A7A1EB7B26F00044683 /* LaunchScreen.storyboard */,
 				059C2A7D1EB7B26F00044683 /* Info.plist */,
@@ -200,10 +215,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059C2A941EBAE2D400044683 /* LocationController.m in Sources */,
 				059C2A911EB8FF2000044683 /* AddReminderViewController.m in Sources */,
 				059C2A741EB7B26F00044683 /* ViewController.m in Sources */,
 				059C2A711EB7B26F00044683 /* AppDelegate.m in Sources */,
+				059C2A971EBAE66200044683 /* LocationPresetsViewController.m in Sources */,
 				059C2A6E1EB7B26F00044683 /* main.m in Sources */,
+				059C2A9D1EBB7C6C00044683 /* Reminder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

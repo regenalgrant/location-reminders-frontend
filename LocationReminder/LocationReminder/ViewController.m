@@ -11,13 +11,14 @@
 
 @import Parse;
 @import MapKit;
+@import CoreLocation;
 
 
 @interface ViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) MKPointAnnotation *point;
+@property(weak, nonatomic)IBOutlet MKMapView *mapView;
+@property(strong, nonatomic)CLLocationManager *locationManager;
+@property(strong, nonatomic)MKPointAnnotation *point;
 
 @end
 
@@ -30,7 +31,7 @@
     self.mapView.showsUserLocation = YES;
     self.mapView.delegate = self;
 }
--(void)requestPermissions{
+-(void)requestPermissions {
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.distanceFilter  = 100;
     self.locationManager.delegate        = self;
