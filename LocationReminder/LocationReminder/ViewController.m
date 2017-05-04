@@ -14,8 +14,9 @@
 @import Parse;
 @import MapKit;
 @import CoreLocation;
-@import 
 @import UIKit;
+
+ParserUI;
 
 
 @interface ViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
@@ -32,7 +33,9 @@
     [super viewDidLoad];
     
     [self requestPermissions];
+    
     self.mapView.showsUserLocation = YES;
+    
     self.mapView.delegate = self;
 }
 
@@ -54,7 +57,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [super prepareForSegue:segue sender:sender];
     
-    if ([segue:identifier isEqualToString:@"addReminderViewController"] && [sender isKindOfClass:[MKAnntationView class]]] {
+    if ([segue:identifier isEqualToString:@"addReminderViewController"] && [sender isKindOfClass:[MKAnnotationView class]] {
             
             MKAnnotationView *annotationView = (MKAnnotationView *)sender;
             

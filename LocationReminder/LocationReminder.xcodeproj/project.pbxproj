@@ -97,6 +97,7 @@
 		059C2A6B1EB7B26F00044683 /* LocationReminder */ = {
 			isa = PBXGroup;
 			children = (
+				059C2A9E1EBBB42F00044683 /* Models */,
 				059C2A6F1EB7B26F00044683 /* AppDelegate.h */,
 				059C2A701EB7B26F00044683 /* AppDelegate.m */,
 				059C2A721EB7B26F00044683 /* ViewController.h */,
@@ -135,6 +136,13 @@
 				059C2A851EB7B3B900044683 /* Carthage */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		059C2A9E1EBBB42F00044683 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
