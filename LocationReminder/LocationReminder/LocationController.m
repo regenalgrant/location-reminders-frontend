@@ -10,16 +10,18 @@
 #import "ViewController.h"
 
 
-@interface LocationController ()
+@interface LocationController () <CLLocationManagerDelegate>
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
 
 @end
 
 @implementation LocationController
-@synthesize locationManager;
-@synthesize location;
 
 
-+ (LocationController *)sharedLocation {
+
++ (instancetype *)shared {
     
     static LocationController *shared = nil;
     
@@ -27,23 +29,38 @@
     
     dispatch_once(&onceToken, ^{
         
-        shared =[[self alloc]init];
+        shared = [[[self class]alloc] init];
+        
         
     });
     
     return shared;
 }
 
-
-- (LocationController *)init {
-    
+- (instancetype) init {
     self = [super init];
+    if (self) {
+        [self requestPermissions];
+        
+    }
+
+- (void)requestPermission {
     
-    locationManager = [[CLLocationManager alloc]init];
+    _locationManager = [[CLLocationManager alloc]init];
     
-    location = [[CLLocation alloc]init];
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    return self;
+    _locationManager.distanceFilter = 5;
+    
+    [_locationManager requestAlwaysAuthorization];
+    
+    [_locationManager startUpdatingLocation];
+    
+
+    
+-(void)startMonitoringForRegion:(CLRegion *)region {
+    
+    [self.locationManager startMonitoringForRegion:region];
     
 }
 
@@ -51,9 +68,32 @@
     
     CLLocation *location = locations.lastObject;
     
-  //  [self.delegate locationControllerUpdatedLocation:location];
+    NSLog(@"Coordinate %f, %f - Altitude: %f", location.coordinate.latitude, location.coordinate.longitude, location.altitude);
     
+    self.location = location;
+    
+    [self.delegate locationControllerUpdatedLocation:location];
+    
+}
+    
+-(void)locationMangager:(CLLocationManager *)manager didstartMonitoringForRegion:(CLRegion *)region {
+    
+    NSLog(@"WE have successfully started montoring changes for regiom: %@", region.identifier);
 }
 
 
+-(void)setLocationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+    
+    NSLog(@"User Did Enter Region: %@", region.identifier);
+}
+
+-(void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
+    
+    NSLog(@"there wa an error: %@", error.NSLocalizedDescription);
+    }
+-(void)localManager:(CLLocationManager *)manager didVisit:(CLVisit *)visit {
+    
+    NSLog(@"This is here for no reason....But heres a visit: %@", visit);
+}
+}
 @end

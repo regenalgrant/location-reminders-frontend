@@ -25,4 +25,6 @@
 @property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) id delegate;
 
+-(void)startMonitoringForRegion:(CLRegion *)region;
+
 @end
