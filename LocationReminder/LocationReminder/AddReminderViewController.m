@@ -34,18 +34,17 @@
     [newReminder saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         NSLog(@"Annotation Title: %@", self.locationTitleField.text);
         NSLog(@"Coordinate: %f, %f", self.coordinate.latitude, self.coordinate.latitude);
-        NSLog(@"Save Reminder Successful: %i - Erroe%", succeeded, error.localizedDescription);
+        NSLog(@"Save Reminder Successful: %i - Error %@", succeeded, error.localizedDescription);
         NSLog(@"Radius Number: %@", self.locationRadiusField.init);
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"ReminderSavedToparse" object:nil];
         if (self.completion) {
-            CGFloat radius = {[self.locationRadiusField.text floatValue];
+            CGFloat radius = [self.locationRadiusField.text floatValue];
                 MKCircle *circle = [MKCircle circleWithCenterCoordinate:self.coordinate radius:radius];
                 
                 self.completion(circle);
                 [self.navigationController popViewControllerAnimated:YES];
             }
-            
         }];
 }
 

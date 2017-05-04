@@ -12,18 +12,21 @@
 
 @interface LocationController ()
 
+@end
+
+@implementation LocationController
 @synthesize locationManager;
 @synthesize location;
 
 
-@end
-
-@implementation LocationController
-
-+(LocationController *)sharedLocation {
++ (LocationController *)sharedLocation {
+    
     static LocationController *shared = nil;
+    
     static  dispatch_once_t onceToken;
+    
     dispatch_once(&onceToken, ^{
+        
         shared =[[self alloc]init];
         
     });
@@ -32,47 +35,25 @@
 }
 
 
--(LocationController *)init {
+- (LocationController *)init {
+    
     self = [super init];
+    
     locationManager = [[CLLocationManager alloc]init];
+    
+    location = [[CLLocation alloc]init];
+    
     return self;
     
 }
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    CLLocation *location = location.last.object;
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     
-    [self.delegate locationControllerUpdatedLocation:location];
+    CLLocation *location = locations.lastObject;
+    
+  //  [self.delegate locationControllerUpdatedLocation:location];
     
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 @end

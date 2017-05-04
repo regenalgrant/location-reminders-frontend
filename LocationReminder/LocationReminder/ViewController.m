@@ -8,10 +8,13 @@
 
 #import "ViewController.h"
 #import "AddReminderViewController.h"
+#import "LocationController.h"
 
 @import Parse;
 @import MapKit;
 @import CoreLocation;
+//@import parseUI;
+@import UIKit;
 
 
 @interface ViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
